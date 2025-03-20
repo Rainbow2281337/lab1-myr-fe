@@ -1,1 +1,52 @@
-<p>reg works!</p>
+<div class="form-container">
+  <form [formGroup]="regForm" class="reg-form">
+    <div class="form-group">
+      <input
+        id="username"
+        name="username"
+        class="form-input reg-username"
+        type="text"
+        placeholder="User name"
+        required
+        formControlName="username"
+        [ngClass]="{ 'is-invalid': regForm.controls['username'].errors }"
+      />
+    </div>
+    <div class="form-group">
+      <input
+        id="emailInput"
+        name="emailInput"
+        class="form-input reg-email"
+        type="text"
+        placeholder="Email"
+        required
+        formControlName="email"
+        [ngClass]="{ 'is-invalid': regForm.controls['email'].errors }"
+      />
+    </div>
+    <div class="form-group">
+      <input
+        id="password"
+        name="password"
+        class="form-input reg-password"
+        type="password"
+        placeholder="Password"
+        required
+        formControlName="password"
+        [ngClass]="{ 'is-invalid': regForm.controls['password'].errors }"
+      />
+    </div>
+    <div class="form-group">
+      <button
+        type="submit"
+        class="form-button reg-submit"
+        (click)="registerUser($event)"
+      >
+        Register User
+      </button>
+    </div>
+    <div class="form-footer">
+      <a routerLink="/auth" class="form-link">Have an account?</a>
+    </div>
+  </form>
+</div>

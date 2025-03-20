@@ -4,7 +4,7 @@ export interface UserRegData {
   password: string;
 }
 
-export interface UserRegPayload {
+export interface User {
   id: string;
   username: string;
   email: string;

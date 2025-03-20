@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, Observable } from 'rxjs';
+import { Comment } from '../interfaces/Comment';
 
 @Injectable({
   providedIn: 'root',
@@ -30,13 +31,11 @@ export class CommentsService {
       content,
     };
 
-    return this.http
-      .post<Comment>(`${this.apiUrl}/${postId}`, commentData)
-      .pipe(
-        catchError((error) => {
-          console.error('Error:', error);
-          throw error;
-        })
-      );
+    return this.http.post<Comment>(`${this.apiUrl}`, commentData).pipe(
+      catchError((error) => {
+        console.error('Error:', error);
+        throw error;
+      })
+    );
   }
 }

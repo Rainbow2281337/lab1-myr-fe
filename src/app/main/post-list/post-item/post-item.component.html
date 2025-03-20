@@ -1,1 +1,8 @@
-<p>post-item works!</p>
+@if (post) {
+<div class="post-item" (click)="navigateToPostDetail(post.id)">
+  <div class="card-body">
+    <h3 class="post-title">{{ post.header }}</h3>
+    <p class="post-content">{{ post.content }}</p>
+  </div>
+</div>
+}

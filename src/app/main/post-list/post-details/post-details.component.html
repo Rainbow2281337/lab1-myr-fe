@@ -1,0 +1,31 @@
+<div class="post-details-wrapper">
+  @if (post) {
+  <div class="post-card">
+    <div class="post-header">
+      <h2>{{ post.header }}</h2>
+    </div>
+    <div class="post-content">
+      <p>{{ post.content }}</p>
+    </div>
+  </div>
+  }
+  <div class="add-comment">
+    <textarea
+      type="text"
+      class="comment-input"
+      placeholder="Write a comment..."
+      [(ngModel)]="newComment"
+    ></textarea>
+    <button class="comment-button" (click)="addNewComment(post.id)">
+      Add Comment
+    </button>
+  </div>
+  <div class="comments-section">
+    <h3>Comments</h3>
+    @for (comment of comments; track comment._id) {
+    <div class="comment">
+      <p class="comment-text">{{ comment.content }}</p>
+    </div>
+    }
+  </div>
+</div>

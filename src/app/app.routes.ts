@@ -32,8 +32,8 @@ export const routes: Routes = [
       {
         path: 'post/:id',
         loadComponent: () =>
-          import('./main/post-list/post-item/post-item.component').then(
-            (m) => m.PostItemComponent
+          import('./main/post-list/post-details/post-details.component').then(
+            (m) => m.PostDetailsComponent
           ),
       },
     ],

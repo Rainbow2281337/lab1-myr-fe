@@ -1,1 +1,48 @@
+<div class="navbar">
+  <button class="navbar-button" (click)="openAddNewPost()">Add New Post</button>
+  <button class="navbar-button" (click)="openProfile()">Profile</button>
+</div>
+
 <app-post-list></app-post-list>
+
+@if (isProfileButtonClicked) {
+<div class="modal-overlay">
+  <div class="modal">
+    <div class="modal-header">
+      <button class="close-btn" (click)="isProfileButtonClicked = false">
+        &times;
+      </button>
+    </div>
+    <div class="modal-body">
+      <p><strong>Username:</strong> {{ user.username }}</p>
+      <p><strong>Email:</strong> {{ user.email }}</p>
+    </div>
+  </div>
+</div>
+} @if (isAddNewPostButtonClicked) {
+<div class="modal-overlay">
+  <div class="modal">
+    <div class="modal-header">
+      <button class="close-btn" (click)="isAddNewPostButtonClicked = false">
+        &times;
+      </button>
+    </div>
+    <div class="add-new-post-modal-body">
+      <form [formGroup]="newPostForm">
+        <input
+          type="text"
+          placeholder="Header"
+          formControlName="header"
+          required
+        />
+        <textarea
+          placeholder="Content"
+          formControlName="content"
+          required
+        ></textarea>
+        <button type="submit" (click)="createNewPost($event)">Add Post</button>
+      </form>
+    </div>
+  </div>
+</div>
+}

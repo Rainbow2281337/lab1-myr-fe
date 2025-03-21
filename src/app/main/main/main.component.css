@@ -1,0 +1,99 @@
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 400px;
+  width: 100%;
+}
+
+.modal-header {
+  text-align: end;
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.modal-body {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  font-size: 16px;
+}
+
+.navbar-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.navbar-button:hover {
+  background-color: #0056b3;
+}
+
+.add-new-post-modal-body {
+  padding: 10px 0;
+}
+
+.add-new-post-modal-body form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.add-new-post-modal-body input,
+.add-new-post-modal-body textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+  font-family: inherit;
+}
+
+.add-new-post-modal-body textarea {
+  height: 120px;
+  resize: none;
+}
+
+.add-new-post-modal-body button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.add-new-post-modal-body button:hover {
+  background-color: #218838;
+}
